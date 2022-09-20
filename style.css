@@ -271,6 +271,17 @@ nav.show div.icon-cross{
     top: -16.8%;
     left: 16.7%;
     z-index: 0;
+    animation: up 2.5s ease 1.5s infinite alternate;
+
+}
+
+@keyframes up{
+    0%{
+        transform: translate3d(10px, 10px, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 #home .image img{
@@ -317,6 +328,16 @@ nav.show div.icon-cross{
     top: -8.3%;
     left: -33%;
     z-index: 0;
+    animation: up 2.5s ease 1.5s infinite alternate;
+}
+
+@keyframes up{
+    0%{
+        transform: translate3d(15px, 10px, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 #about .image img{
@@ -498,6 +519,7 @@ footer .brand .logo > .logo-alt{
 footer .logo .logo-alt{
     display: inline-block;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 footer .brand p{
@@ -512,7 +534,7 @@ footer i{
 
 footer .social a{
     display: inline-block;
-    padding: 2rem;    
+    margin-right: 2rem;   
     transition: .3s;
 }
 
