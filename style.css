@@ -13,14 +13,14 @@ a{
 }
 
 :root{
-    --hue: 159;
+    --hue: 200;
     --base-color: hsl(var(--hue) 36% 57%);
     --base-color-second: hsl(var(--hue) 65% 88%);
     --base-color-alt: hsl(var(--hue) 57% 56%);
     --title-color: hsl(var(--hue) 41% 10%);
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%);    
+    --body-color: hsl(0 0% 98%);   
 }
 
 html{
@@ -138,14 +138,19 @@ nav ul li a::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: var(--base-color);
+    background: linear-gradient(
+    270deg, 
+    hsla(var(--hue), 36%, 57%, 1), 
+    hsla(var(--hue), 65%, 88%, 0.34)
+    );
     position: absolute;
     left: 0;
     bottom: -1.5rem;
     transition: width 0.2s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after,
+nav ul li a.active::after{
     width: 100%;
 }
 
@@ -480,4 +485,161 @@ nav.show div.icon-cross{
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+footer{
+    background-color: var(--base-color);
+}
+
+footer .brand .logo > .logo-alt{
+    color: var(--text-color-light);
+}
+
+footer .logo .logo-alt{
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer .brand p{
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social a{
+    display: inline-block;
+    padding: 2rem;    
+    transition: .3s;
+}
+
+footer .social a:hover{
+    transform: translateY(-10px);
+}
+
+@media (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section{
+        padding: 10rem 0;
+    }
+    
+    .button{
+        height: 3.125rem;
+    }
+
+    .section header,
+    #testimonials header{
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    /* navegação */
+    #header{
+        background: var(--base-color);
+    }
+
+    .logo span{
+        color: var(--text-color-light);
+    }
+    nav .menu{
+        opacity: 1;
+        visibility: visible;
+        top: 0;        
+    }
+
+    nav .menu ul{
+        display: flex;
+        gap: 2rem
+    }
+
+    nav .menu ul .title{
+        font-size: 1rem;       
+    }
+
+    nav .menu ul .title:hover,
+    nav ul li a.active{
+        color: var(--text-color-light);
+    }
+   
+    nav ul li a::after{        
+        background: var(--text-color-light);        
+    }  
+
+    nav .icon-menu{
+        display: none;
+    }
+
+    /* home */
+
+    #home .container{
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    #home .image{
+        order:1;
+    }
+
+    #home .text{
+        order: 0;
+        max-width: 24rem;
+        text-align: left;       
+    }
+
+    /* about */
+
+    #about .container{
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+
+    /* services */
+    .cards{
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    /* testimonials */
+    #testimonials .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* contact */
+    #contact .container{
+        grid-auto-flow: column;
+        align-items: center;
+    }
+
+    #contact .text{
+        max-width: 25rem;
+    }
+
+    footer .container{
+        padding: 3.75rem 0;
+    }
+
+    footer .sections{
+        padding: 3rem 0;
+    }
+
+    footer .container{
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .logo{
+        font-size: 2.25rem;
+    }
 }
