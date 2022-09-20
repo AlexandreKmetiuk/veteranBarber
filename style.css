@@ -534,7 +534,8 @@ footer i{
 
 footer .social a{
     display: inline-block;
-    margin-right: 2rem;   
+    margin-right: 2rem;
+    margin-bottom: 1rem;   
     transition: .3s;
 }
 
